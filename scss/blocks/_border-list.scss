@@ -1,0 +1,116 @@
+.border-list {
+    list-style: none;
+    margin: 0;
+    padding: 90px 94px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include vp-767 {
+        display: grid;
+        grid-template-columns: repeat(4, 20%);
+        padding: 0;
+        gap: 40px;
+    }
+
+    @media (max-width:640px) {
+        width: 100%;
+        grid-template-columns: repeat(2, auto);
+        padding: 0 28px;
+        justify-content: space-around;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        @include vp-767 {
+            justify-content: end;
+        }
+
+        @media (max-width:640px) {
+            justify-content: start;
+            width: 120px;
+        }
+    
+        &:first-child {
+    
+            @include vp-767 {
+                justify-content: start;
+            }
+
+            @media (max-width:640px) {
+                justify-content: end;
+            }
+        }
+
+    }
+
+    &__text-color {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+        color: $color-fallow;
+        text-transform: uppercase;
+
+        margin: 0;
+
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: baseline;
+
+        @include vp-767 {
+            gap: 5px;
+        }
+
+        &:first-child {
+            font-size: 48px;
+            line-height: 48px;
+
+            @include vp-767 {
+                font-size: 40px;
+                line-height: 40px;
+            }
+        }
+
+        &--max {
+
+            &:first-child {
+                font-size: 140px;
+                line-height: 100px;
+                letter-spacing: -0.04em;
+
+                @include vp-767 {
+                    font-size: 90px;
+                    line-height: 70px;
+                }
+            }
+        }
+
+        &--min {
+            font-size: 40px;
+            line-height: 44px;
+
+            @include vp-767 {
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    &__icon-tablet {
+
+        &--top {
+            margin: 0 0 10px 0;
+        }
+
+        &--bottom {
+            margin: 10px 0 0 0;
+        }
+    }
+}
